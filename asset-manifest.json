@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/tof-pack/static/js/main.cc09efd8.chunk.js",
-    "main.js.map": "/tof-pack/static/js/main.cc09efd8.chunk.js.map",
+    "main.js": "/tof-pack/static/js/main.43c6987b.chunk.js",
+    "main.js.map": "/tof-pack/static/js/main.43c6987b.chunk.js.map",
     "runtime-main.js": "/tof-pack/static/js/runtime-main.42f5bada.js",
     "runtime-main.js.map": "/tof-pack/static/js/runtime-main.42f5bada.js.map",
     "static/js/2.05f05e57.chunk.js": "/tof-pack/static/js/2.05f05e57.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.42f5bada.js",
     "static/js/2.05f05e57.chunk.js",
-    "static/js/main.cc09efd8.chunk.js"
+    "static/js/main.43c6987b.chunk.js"
   ]
 }
