@@ -1,0 +1,19 @@
+{
+  "name": "tof-pack",
+  "version": "1.0.0",
+  "description": "Keep track of your materials and plan your upgrades for Tower of Fantasy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blowita/tof-pack.git"
+  },
+  "keywords": [
+    "tower-of-fantasy",
+    "toweroffantasy"
+  ],
+  "author": "BlowITA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blowita/tof-pack/issues"
+  },
+  "homepage": "https://blowita.github.io/tof-pack/#/"
+}
