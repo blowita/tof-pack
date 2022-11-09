@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/tof-pack/static/js/main.cc09efd8.chunk.js",
+    "main.js.map": "/tof-pack/static/js/main.cc09efd8.chunk.js.map",
+    "runtime-main.js": "/tof-pack/static/js/runtime-main.42f5bada.js",
+    "runtime-main.js.map": "/tof-pack/static/js/runtime-main.42f5bada.js.map",
+    "static/js/2.05f05e57.chunk.js": "/tof-pack/static/js/2.05f05e57.chunk.js",
+    "static/js/2.05f05e57.chunk.js.map": "/tof-pack/static/js/2.05f05e57.chunk.js.map",
+    "static/js/3.9274c7e8.chunk.js": "/tof-pack/static/js/3.9274c7e8.chunk.js",
+    "static/js/3.9274c7e8.chunk.js.map": "/tof-pack/static/js/3.9274c7e8.chunk.js.map",
+    "index.html": "/tof-pack/index.html",
+    "static/js/2.05f05e57.chunk.js.LICENSE.txt": "/tof-pack/static/js/2.05f05e57.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.42f5bada.js",
+    "static/js/2.05f05e57.chunk.js",
+    "static/js/main.cc09efd8.chunk.js"
+  ]
+}
