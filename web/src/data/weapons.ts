@@ -160,7 +160,7 @@ export const weapons: Weapon[] = [
     role: WeaponRole.Dps,
     rarity: 5,
     imageUrl1: "/tof-pack/static/images/weapon/Weapon_ScytheOfTheCrow.webp",
-    imageUrl2: "/tof-pack/static/images/avatar/Avatar_King.webp",
+    imageUrl2: "/tof-pack/static/images/avatar/Avatar_KING.webp",
   },
   {
     id: WeaponId.RosyEdge,
