@@ -27,23 +27,40 @@ import {
   LevelProgress,
 } from "./styles";
 
-const levelOptions = [{ label: "0", value: "0", level: 0, capped: false }];
+const levelOptionsCurrent = [
+  { label: "0", value: "0", level: 0, capped: false },
+];
+const levelOptionsDesired = [
+  { label: "0", value: "0", level: 0, capped: false },
+];
 upgradeBreakpoints.forEach((limit) => {
   for (let i = 9; i > 0; i--) {
-    levelOptions.push({
+    levelOptionsCurrent.push({
       label: `${limit - i}`,
       value: `${limit - i}`,
       level: limit - i,
       capped: false,
     });
   }
-  levelOptions.push({
+  levelOptionsCurrent.push({
     label: `${limit} CAP`,
     value: `${limit} CAP`,
     level: limit,
     capped: true,
   });
-  levelOptions.push({
+  levelOptionsCurrent.push({
+    label: `${limit} UPG`,
+    value: `${limit} UPG`,
+    level: limit,
+    capped: false,
+  });
+  levelOptionsDesired.push({
+    label: `${limit} CAP`,
+    value: `${limit} CAP`,
+    level: limit,
+    capped: true,
+  });
+  levelOptionsDesired.push({
     label: `${limit} UPG`,
     value: `${limit} UPG`,
     level: limit,
@@ -57,14 +74,14 @@ interface LevelData {
 }
 
 const optionForLevel = ({ level, capped }: LevelData): string => {
-  const found = levelOptions.find(
+  const found = levelOptionsCurrent.find(
     (item) => item.level === level && item.capped === capped
   );
   return found ? found.value : "0";
 };
 
 const levelForOption = (value: string): LevelData => {
-  const found = levelOptions.find((item) => item.value === value);
+  const found = levelOptionsCurrent.find((item) => item.value === value);
   return found
     ? { level: found.level, capped: found.capped }
     : { level: 0, capped: false };
@@ -158,7 +175,7 @@ const WeaponProgressCard: React.FC<WeaponProgressCardProps> = ({
           onBlur={handleCurrentLevelChange}
           disabled={!weapon.enabled}
         >
-          {levelOptions.map((opt) => (
+          {levelOptionsCurrent.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}
             </option>
@@ -174,7 +191,7 @@ const WeaponProgressCard: React.FC<WeaponProgressCardProps> = ({
           onBlur={handleDesiredLevelChange}
           disabled={!weapon.enabled || lockDesired}
         >
-          {levelOptions.map((opt) => (
+          {levelOptionsDesired.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}
             </option>
