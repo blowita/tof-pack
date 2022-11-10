@@ -321,7 +321,7 @@ const MaterialTierIIIMappingSR = [
   0,
   0,
   3,
-  7,
+  3,
 ];
 
 const MineralMaterialTierIMappingR = [
@@ -357,10 +357,10 @@ const MaterialTierIIMappingR = [
   4,
   7,
   11,
-  11,
-  11,
-  11,
-  11,
+  17,
+  25,
+  25,
+  25,
 ];
 
 const MaterialTierIIIMappingR = [
@@ -379,8 +379,8 @@ const MaterialTierIIIMappingR = [
   0,
   0,
   0,
-  0,
-  0,
+  2,
+  2,
 ];
 
 const FlameMaterialsMappingSSR = {
