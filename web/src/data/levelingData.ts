@@ -177,12 +177,14 @@ interface UpgradeCostTallyArgs {
   rarity: number;
   level: number;
   capped: boolean;
+  lin: boolean;
 }
 
 export const upgradeCostTally = ({
   rarity,
   level,
   capped,
+  lin,
 }: UpgradeCostTallyArgs): number => {
   let n = Math.trunc(level / 10);
 
@@ -201,6 +203,10 @@ export const upgradeCostTally = ({
     case 3:
       base = 200;
       break;
+  }
+
+  if (lin) {
+    base = 600;
   }
 
   return base * 0.5 * (n + 1) * n;
@@ -599,9 +605,121 @@ const BoosterFrameMappingR = {
   [ResourceId.BoosterFrameIII]: MaterialTierIIIMappingR,
 };
 
+const ShadoweaveCheapMaterialTierIMapping = [
+  0,
+  1,
+  2,
+  4,
+  6,
+  9,
+  13,
+  19,
+  28,
+  28,
+  28,
+  28,
+  28,
+  28,
+  28,
+  28,
+  28,
+];
+
+const ShadoweaveExpensiveMaterialTierIMapping = [
+  0,
+  0,
+  0,
+  0,
+  2,
+  5,
+  10,
+  17,
+  26,
+  26,
+  26,
+  26,
+  26,
+  26,
+  26,
+  26,
+  26,
+];
+
+const ShadoweaveMaterialTierIIMapping = [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  3,
+  7,
+  13,
+  22,
+  34,
+  50,
+  50,
+  50,
+];
+
+const ShadoweaveMaterialTierIIIMapping = [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  4,
+  4,
+];
+
+const ShadoweaveNanoCoatingMapping = {
+  [ResourceId.NanoCoatingI]: ShadoweaveCheapMaterialTierIMapping,
+  [ResourceId.NanoCoatingII]: ShadoweaveMaterialTierIIMapping,
+  [ResourceId.NanoCoatingIII]: ShadoweaveMaterialTierIIIMapping,
+};
+
+const ShadoweaveAcidproofGlazeMapping = {
+  [ResourceId.AcidproofGlazeI]: ShadoweaveCheapMaterialTierIMapping,
+  [ResourceId.AcidproofGlazeII]: ShadoweaveMaterialTierIIMapping,
+  [ResourceId.AcidproofGlazeIII]: ShadoweaveMaterialTierIIIMapping,
+};
+
+const ShadoweaveNanofiberFrameMapping = {
+  [ResourceId.NanofiberFrameI]: ShadoweaveExpensiveMaterialTierIMapping,
+  [ResourceId.NanofiberFrameII]: ShadoweaveMaterialTierIIMapping,
+  [ResourceId.NanofiberFrameIII]: ShadoweaveMaterialTierIIIMapping,
+};
+
+const ShadoweaveBoosterFrameMapping = {
+  [ResourceId.BoosterFrameI]: ShadoweaveExpensiveMaterialTierIMapping,
+  [ResourceId.BoosterFrameII]: ShadoweaveMaterialTierIIMapping,
+  [ResourceId.BoosterFrameIII]: ShadoweaveMaterialTierIIIMapping,
+};
+
+const ShadoweaveMaterials = {
+  ...ShadoweaveNanoCoatingMapping,
+  ...ShadoweaveAcidproofGlazeMapping,
+  ...ShadoweaveNanofiberFrameMapping,
+  ...ShadoweaveBoosterFrameMapping,
+};
+
 type WeaponResourcesMapping = Record<string, Record<string, number[]>>;
 
 export const weaponResourcesMapping = {
+  [WeaponId.Shadoweave]: ShadoweaveMaterials,
   [WeaponId.Heartstream]: {
     ...FrostMaterialsMappingSSR,
     ...NanoCoatingMappingSSR,

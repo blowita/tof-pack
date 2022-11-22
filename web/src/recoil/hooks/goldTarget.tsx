@@ -1,6 +1,6 @@
 import { WeaponEntity, weaponStore } from "../entities";
 
-import { weaponIds } from "../../data/weapons";
+import { WeaponId, weaponIds } from "../../data/weapons";
 import { weaponExpTable, upgradeCostTally } from "../../data/levelingData";
 
 const calculateGoldForWeapon = (weapon: WeaponEntity): number => {
@@ -11,11 +11,13 @@ const calculateGoldForWeapon = (weapon: WeaponEntity): number => {
   target += upgradeCostTally({
     rarity: weapon.rarity,
     ...weapon.upgrade.desired,
+    lin: weapon.id === WeaponId.Shadoweave,
   });
 
   target -= upgradeCostTally({
     rarity: weapon.rarity,
     ...weapon.upgrade.current,
+    lin: weapon.id === WeaponId.Shadoweave,
   });
 
   return target;

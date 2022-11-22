@@ -13,6 +13,7 @@ export enum WeaponRole {
 }
 
 export enum WeaponId {
+  Shadoweave = "a3486a4d-7b40-4471-8641-ee993d7b094e",
   Heartstream = "8c9070a6-20d1-4515-ba95-5a17b4b2108b",
   Spark = "55516ecc-f690-49f6-bebd-7961db049e7d",
   FlamingRevolver = "0fc1ebcb-6ebc-4f0e-ae1a-06f2949b5830",
@@ -52,6 +53,17 @@ export interface Weapon {
 }
 
 export const weapons: Weapon[] = [
+  {
+    id: WeaponId.Shadoweave,
+    sortId: 98,
+    name: "Shadoweave",
+    character: "Lin",
+    element: ElementType.Altered,
+    role: WeaponRole.Dps,
+    rarity: 5,
+    imageUrl1: "/tof-pack/static/images/weapon/Weapon_Shadoweave.webp",
+    imageUrl2: "/tof-pack/static/images/avatar/Avatar_Lin.webp",
+  },
   {
     id: WeaponId.Heartstream,
     sortId: 99,
